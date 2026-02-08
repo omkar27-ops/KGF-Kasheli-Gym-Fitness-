@@ -8,7 +8,7 @@ import { Contact } from './pages/Contact';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -19,7 +19,7 @@ const ScrollToTop = () => {
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="bg-[#050505] min-h-screen flex flex-col font-inter text-white selection:bg-kgf-gold selection:text-black">
+      <div className="bg-gradient-to-br from-zinc-900 via-black to-zinc-900 min-h-screen flex flex-col font-inter text-white selection:bg-kgf-gold selection:text-black">
         <ScrollToTop />
         <Navbar />
         <main className="flex-grow">

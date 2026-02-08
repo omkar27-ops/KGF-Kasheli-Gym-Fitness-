@@ -35,13 +35,15 @@ const testimonials: Testimonial[] = [
 export const Home: React.FC = () => {
   return (
     <div className="w-full overflow-x-hidden">
-      
+
       {/* SECTION 2: HERO */}
-      <section id="hero" className="relative min-h-screen pt-[72px] flex items-center overflow-hidden">
-        <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-          
-          {/* Left Column */}
-          <div className="flex flex-col items-start space-y-8 animate-fade-in-up">
+      <section id="hero" className="relative min-h-screen pt-[72px] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/hero-bg.jpg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
+        <div className="absolute inset-0 bg-black/40 z-0"></div> {/* Additional darkening for better text contrast */}
+        <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6 flex flex-col items-center justify-center relative z-10">
+
+          {/* Hero Content */}
+          <div className="flex flex-col items-center text-center space-y-8 animate-fade-in-up max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-kgf-goldSubtle bg-kgf-goldSubtle/20 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-kgf-gold animate-pulse"></span>
               <span className="text-xs font-inter font-bold tracking-widest text-kgf-gold uppercase">Premium Fitness Club in Kasheli</span>
@@ -53,12 +55,12 @@ export const Home: React.FC = () => {
               Stay Consistent.
             </h1>
 
-            <p className="text-kgf-textSec text-base md:text-lg max-w-lg leading-relaxed font-inter">
+            <p className="text-kgf-textSec text-base md:text-lg max-w-lg leading-relaxed font-inter mx-auto">
               KGF (Kasheli Gym Fitness) is built for people who are serious about fitness.
               Top-quality equipment, personalised training, and a motivating environment.
             </p>
 
-            <div className="flex items-center gap-4 text-sm font-inter">
+            <div className="flex items-center gap-4 text-sm font-inter justify-center">
               <div className="flex items-center gap-1 text-white">
                 <Star size={16} className="fill-kgf-gold text-kgf-gold" />
                 <span className="font-bold">5.0</span>
@@ -70,52 +72,16 @@ export const Home: React.FC = () => {
               <span className="text-kgf-textSec">Premium Equipment</span>
             </div>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button onClick={() => document.getElementById('programs')?.scrollIntoView({behavior: 'smooth'})}>View Programs</Button>
+            <div className="flex flex-wrap gap-4 pt-4 justify-center">
+              <Button onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}>View Programs</Button>
               <Button variant="secondary" onClick={() => window.open('https://maps.google.com', '_blank')}>Get Directions</Button>
-            </div>
-          </div>
-
-          {/* Right Column - Abstract Floating Images */}
-          <div className="relative h-[600px] hidden md:block select-none pointer-events-none">
-            {/* Helper for placeholder styling */}
-            <div className="absolute inset-0">
-               {/* Large vertical - top right */}
-               <div className="absolute top-0 right-0 w-48 h-72 bg-[#0F0F0F] border border-dashed border-kgf-gold/30 rounded-2xl shadow-2xl flex items-center justify-center rotate-6 z-10 hover:z-20 transition-all duration-500 hover:rotate-0">
-                  <span className="text-kgf-textTert font-oswald text-xs tracking-widest">GYM PHOTO</span>
-               </div>
-               
-               {/* Medium square - center */}
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-[#0F0F0F] border border-dashed border-kgf-gold/30 rounded-2xl shadow-xl flex items-center justify-center -rotate-3 z-20 hover:scale-105 transition-all duration-500">
-                  <span className="text-kgf-textTert font-oswald text-xs tracking-widest">GYM PHOTO</span>
-               </div>
-
-               {/* Tall portrait - left */}
-               <div className="absolute top-20 left-10 w-40 h-64 bg-[#0F0F0F] border border-dashed border-kgf-gold/30 rounded-2xl shadow-lg flex items-center justify-center -rotate-12 z-0 opacity-80">
-                  <span className="text-kgf-textTert font-oswald text-xs tracking-widest">GYM PHOTO</span>
-               </div>
-
-               {/* Small square - top center */}
-               <div className="absolute top-10 left-1/2 w-32 h-32 bg-[#0F0F0F] border border-dashed border-kgf-gold/30 rounded-xl shadow-lg flex items-center justify-center rotate-12 z-0 opacity-60">
-                  <span className="text-kgf-textTert font-oswald text-xs tracking-widest">GYM PHOTO</span>
-               </div>
-
-               {/* Medium rectangle - bottom right */}
-               <div className="absolute bottom-20 right-10 w-64 h-40 bg-[#0F0F0F] border border-dashed border-kgf-gold/30 rounded-2xl shadow-xl flex items-center justify-center rotate-3 z-10">
-                  <span className="text-kgf-textTert font-oswald text-xs tracking-widest">GYM PHOTO</span>
-               </div>
-
-               {/* Small portrait - bottom left */}
-               <div className="absolute bottom-10 left-20 w-36 h-48 bg-[#0F0F0F] border border-dashed border-kgf-gold/30 rounded-2xl shadow-lg flex items-center justify-center -rotate-6 z-10">
-                  <span className="text-kgf-textTert font-oswald text-xs tracking-widest">GYM PHOTO</span>
-               </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 3: PROGRAMS */}
-      <section id="programs" className="py-16 md:py-32 bg-[#050505]">
+      <section id="programs" className="py-16 md:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-[2rem] md:text-[2.6rem] font-oswald font-semibold text-white inline-block relative pb-4">
@@ -123,7 +89,7 @@ export const Home: React.FC = () => {
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-kgf-gold"></span>
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((program) => (
               <div key={program.id} className="group bg-kgf-card p-8 rounded-xl border border-white/5 hover:border-kgf-gold transition-all duration-300 hover:-translate-y-2 hover:shadow-gold-glow">
@@ -142,7 +108,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 4: TRAINERS */}
-      <section id="trainers" className="py-16 md:py-32 bg-[#0B0B0B]">
+      <section id="trainers" className="py-16 md:py-32 bg-gradient-to-b from-zinc-900 to-zinc-800">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-[2rem] md:text-[2.6rem] font-oswald font-semibold text-white">
@@ -157,7 +123,7 @@ export const Home: React.FC = () => {
                 <div className="h-64 bg-[#151515] relative overflow-hidden">
                   {/* Placeholder for trainer image */}
                   <div className="absolute inset-0 flex items-center justify-center bg-[#1a1a1a]">
-                     <User size={64} className="text-kgf-textTert opacity-20" />
+                    <User size={64} className="text-kgf-textTert opacity-20" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -173,7 +139,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 5: MEMBERSHIP */}
-      <section id="membership" className="py-16 md:py-32 bg-[#050505]">
+      <section id="membership" className="py-16 md:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-[2rem] md:text-[2.6rem] font-oswald font-semibold text-white">
@@ -184,13 +150,12 @@ export const Home: React.FC = () => {
 
           <div className="grid md:grid-cols-3 gap-8 items-center">
             {plans.map((plan) => (
-              <div 
-                key={plan.id} 
-                className={`relative p-8 rounded-2xl border transition-all duration-300 ${
-                  plan.isPopular 
-                    ? 'bg-[#151515] border-kgf-gold shadow-gold-glow scale-105 z-10' 
-                    : 'bg-kgf-card border-white/5 hover:border-white/20'
-                }`}
+              <div
+                key={plan.id}
+                className={`relative p-8 rounded-2xl border transition-all duration-300 ${plan.isPopular
+                  ? 'bg-[#151515] border-kgf-gold shadow-gold-glow scale-105 z-10'
+                  : 'bg-kgf-card border-white/5 hover:border-white/20'
+                  }`}
               >
                 {plan.isPopular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-kgf-gold text-black px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
@@ -202,7 +167,7 @@ export const Home: React.FC = () => {
                   <span className="text-4xl font-oswald font-bold text-white">{plan.price}</span>
                   {plan.name !== 'Monthly' && <span className="text-kgf-textTert text-sm"> / period</span>}
                 </div>
-                
+
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm font-inter text-kgf-textSec">
@@ -212,8 +177,8 @@ export const Home: React.FC = () => {
                   ))}
                 </ul>
 
-                <Button 
-                  variant={plan.isPopular ? 'primary' : 'outline'} 
+                <Button
+                  variant={plan.isPopular ? 'primary' : 'outline'}
                   fullWidth
                 >
                   Join Now
@@ -225,34 +190,34 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 6: TESTIMONIALS */}
-      <section className="py-16 md:py-32 bg-[#0B0B0B] overflow-hidden">
+      <section className="py-16 md:py-32 bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
-           <div className="mb-12 flex items-center gap-4">
-             <h2 className="text-[2rem] md:text-[2.6rem] font-oswald font-semibold text-white">Success Stories</h2>
-             <div className="h-[1px] flex-grow bg-white/10"></div>
-           </div>
-           
-           <div className="flex flex-col md:flex-row gap-6 overflow-x-auto pb-8 snap-x">
-             {testimonials.map((t) => (
-               <div key={t.id} className="min-w-[300px] md:min-w-[400px] bg-kgf-card p-8 rounded-xl border border-white/5 relative snap-center">
-                 <Quote className="absolute top-8 right-8 text-kgf-gold/20" size={48} />
-                 <p className="text-lg font-inter text-white italic mb-6 relative z-10">"{t.quote}"</p>
-                 <div>
-                   <h4 className="font-oswald font-bold text-kgf-gold">{t.name}</h4>
-                   <p className="text-xs text-kgf-textTert uppercase tracking-wider">{t.role}</p>
-                 </div>
-               </div>
-             ))}
-           </div>
+          <div className="mb-12 flex items-center gap-4">
+            <h2 className="text-[2rem] md:text-[2.6rem] font-oswald font-semibold text-white">Success Stories</h2>
+            <div className="h-[1px] flex-grow bg-white/10"></div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6 overflow-x-auto pb-8 snap-x">
+            {testimonials.map((t) => (
+              <div key={t.id} className="min-w-[300px] md:min-w-[400px] bg-kgf-card p-8 rounded-xl border border-white/5 relative snap-center">
+                <Quote className="absolute top-8 right-8 text-kgf-gold/20" size={48} />
+                <p className="text-lg font-inter text-white italic mb-6 relative z-10">"{t.quote}"</p>
+                <div>
+                  <h4 className="font-oswald font-bold text-kgf-gold">{t.name}</h4>
+                  <p className="text-xs text-kgf-textTert uppercase tracking-wider">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* SECTION 7: CTA */}
-      <section className="py-24 bg-black relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-t from-zinc-950 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.15)_0%,transparent_70%)]"></div>
         <div className="max-w-[800px] mx-auto px-4 text-center relative z-10">
           <h2 className="text-[2.6rem] md:text-[4rem] font-oswald font-bold text-white mb-8 leading-none">
-            Your Fitness Journey <br/><span className="text-kgf-gold">Starts Here</span>
+            Your Fitness Journey <br /><span className="text-kgf-gold">Starts Here</span>
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="primary" className="min-w-[180px]" onClick={() => window.open('tel:08298292929')}>Call Now</Button>
