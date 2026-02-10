@@ -5,6 +5,7 @@ export interface Program {
   title: string;
   description: string;
   icon: React.ReactNode;
+  image?: string;
 }
 
 export interface Trainer {

@@ -5,12 +5,12 @@ import { Program, Trainer, Plan, Testimonial } from '../types';
 
 // Data Mockups
 const programs: Program[] = [
-  { id: '1', title: 'Strength Training', description: 'Build raw power with heavy lifting protocols.', icon: <Dumbbell className="text-kgf-gold" size={32} /> },
-  { id: '2', title: 'Fat Loss', description: 'High intensity circuits designed to burn calories.', icon: <Flame className="text-kgf-gold" size={32} /> },
-  { id: '3', title: 'Personal Training', description: 'One-on-one coaching customized to your goals.', icon: <User className="text-kgf-gold" size={32} /> },
-  { id: '4', title: 'Functional Training', description: 'Movement-based training for real-world strength.', icon: <Activity className="text-kgf-gold" size={32} /> },
-  { id: '5', title: 'Bodybuilding', description: 'Sculpt your physique with isolation techniques.', icon: <Trophy className="text-kgf-gold" size={32} /> },
-  { id: '6', title: 'General Fitness', description: 'Maintain health and vitality with balanced routines.', icon: <Heart className="text-kgf-gold" size={32} /> },
+  { id: '1', title: 'Strength Training', description: 'Build raw power with heavy lifting protocols.', icon: <Dumbbell className="text-kgf-gold" size={32} />, image: '/assets/programs/program-1.jpg' },
+  { id: '2', title: 'Fat Loss', description: 'High intensity circuits designed to burn calories.', icon: <Flame className="text-kgf-gold" size={32} />, image: '/assets/programs/program-fat-loss.jpg' },
+  { id: '3', title: 'Personal Training', description: 'One-on-one coaching customized to your goals.', icon: <User className="text-kgf-gold" size={32} />, image: '/assets/programs/program-personal.jpg' },
+  { id: '4', title: 'Functional Training', description: 'Movement-based training for real-world strength.', icon: <Activity className="text-kgf-gold" size={32} />, image: '/assets/programs/program-functional.jpg' },
+  { id: '5', title: 'Bodybuilding', description: 'Sculpt your physique with isolation techniques.', icon: <Trophy className="text-kgf-gold" size={32} />, image: '/assets/programs/program-bodybuilding.jpg' },
+  { id: '6', title: 'General Fitness', description: 'Maintain health and vitality with balanced routines.', icon: <Heart className="text-kgf-gold" size={32} />, image: '/assets/programs/program-general-fitness.jpg' },
 ];
 
 const trainers: Trainer[] = [
@@ -92,14 +92,29 @@ export const Home: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((program) => (
-              <div key={program.id} className="group bg-kgf-card p-8 rounded-xl border border-white/5 hover:border-kgf-gold transition-all duration-300 hover:-translate-y-2 hover:shadow-gold-glow">
-                <div className="mb-6 p-4 bg-kgf-elevated rounded-full w-fit group-hover:bg-kgf-gold/10 transition-colors">
-                  {program.icon}
-                </div>
-                <h3 className="text-2xl font-oswald font-semibold text-white mb-3">{program.title}</h3>
-                <p className="text-kgf-textSec font-inter mb-6 leading-relaxed text-sm">{program.description}</p>
-                <div className="flex items-center text-kgf-gold text-sm font-bold uppercase tracking-wider group-hover:gap-2 transition-all cursor-pointer">
-                  Know More <ArrowRight size={16} className="ml-1" />
+              <div key={program.id} className="group relative bg-kgf-card p-8 rounded-xl border border-white/5 hover:border-kgf-gold transition-all duration-300 hover:-translate-y-2 hover:shadow-gold-glow overflow-hidden">
+                {/* Background Image with Overlay */}
+                {program.image && (
+                  <>
+                    <div className="absolute inset-0 z-0">
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                        className="w-full h-full object-cover opacity-40 transition-transform duration-700 ease-in-out scale-100 group-hover:scale-110"
+                      />
+                    </div>
+                    {/* Gradient Overlay for Text Readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60 z-0"></div>
+                  </>
+                )}
+
+                {/* Content - Ensure it stays above background */}
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className="mb-6 p-4 bg-kgf-elevated rounded-full w-fit group-hover:bg-kgf-gold/10 transition-colors">
+                    {program.icon}
+                  </div>
+                  <h3 className="text-2xl font-oswald font-semibold text-white mb-3">{program.title}</h3>
+                  <p className="text-kgf-textSec font-inter mb-6 leading-relaxed text-sm flex-grow">{program.description}</p>
                 </div>
               </div>
             ))}
