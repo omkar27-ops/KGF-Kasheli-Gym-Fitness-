@@ -5,12 +5,12 @@ import { Program, Trainer, Plan, Testimonial } from '../types';
 
 // Data Mockups
 const programs: Program[] = [
-  { id: '1', title: 'Strength Training', description: 'Build raw power with heavy lifting protocols.', icon: <Dumbbell className="text-kgf-gold" size={32} />, image: '/assets/programs/program-1.jpg' },
-  { id: '2', title: 'Fat Loss', description: 'High intensity circuits designed to burn calories.', icon: <Flame className="text-kgf-gold" size={32} />, image: '/assets/programs/program-fat-loss.jpg' },
-  { id: '3', title: 'Personal Training', description: 'One-on-one coaching customized to your goals.', icon: <User className="text-kgf-gold" size={32} />, image: '/assets/programs/program-personal.jpg' },
-  { id: '4', title: 'Functional Training', description: 'Movement-based training for real-world strength.', icon: <Activity className="text-kgf-gold" size={32} />, image: '/assets/programs/program-functional.jpg' },
-  { id: '5', title: 'Bodybuilding', description: 'Sculpt your physique with isolation techniques.', icon: <Trophy className="text-kgf-gold" size={32} />, image: '/assets/programs/program-bodybuilding.jpg' },
-  { id: '6', title: 'General Fitness', description: 'Maintain health and vitality with balanced routines.', icon: <Heart className="text-kgf-gold" size={32} />, image: '/assets/programs/program-general-fitness.jpg' },
+  { id: '1', title: 'Strength Training', description: 'Build raw power with heavy lifting protocols.', icon: <Dumbbell className="text-kgf-gold" size={32} />, image: '/assets/programs/program-1.webp' },
+  { id: '2', title: 'Fat Loss', description: 'High intensity circuits designed to burn calories.', icon: <Flame className="text-kgf-gold" size={32} />, image: '/assets/programs/program-fat-loss.webp' },
+  { id: '3', title: 'Personal Training', description: 'One-on-one coaching customized to your goals.', icon: <User className="text-kgf-gold" size={32} />, image: '/assets/programs/program-personal.webp' },
+  { id: '4', title: 'Functional Training', description: 'Movement-based training for real-world strength.', icon: <Activity className="text-kgf-gold" size={32} />, image: '/assets/programs/program-functional.webp' },
+  { id: '5', title: 'Bodybuilding', description: 'Sculpt your physique with isolation techniques.', icon: <Trophy className="text-kgf-gold" size={32} />, image: '/assets/programs/program-bodybuilding.webp' },
+  { id: '6', title: 'General Fitness', description: 'Maintain health and vitality with balanced routines.', icon: <Heart className="text-kgf-gold" size={32} />, image: '/assets/programs/program-general-fitness.webp' },
 ];
 
 const trainers: Trainer[] = [
@@ -37,7 +37,7 @@ export const Home: React.FC = () => {
     <div className="w-full overflow-x-hidden">
 
       {/* SECTION 2: HERO */}
-      <section id="hero" className="relative min-h-screen pt-[72px] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/hero-bg.jpg')" }}>
+      <section id="hero" className="relative min-h-screen pt-[72px] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/hero-bg.webp')" }}>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
         <div className="absolute inset-0 bg-black/40 z-0"></div> {/* Additional darkening for better text contrast */}
         <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6 flex flex-col items-center justify-center relative z-10">

@@ -42,7 +42,7 @@ export const About: React.FC = () => {
           {/* Visual Placeholder */}
           <div className="relative h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
             <img
-              src="/assets/about/gym-interior.jpg"
+              src="/assets/about/gym-interior.webp"
               alt="KGF Gym Interior"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
